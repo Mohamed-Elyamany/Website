@@ -738,7 +738,7 @@ section,
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
-/* .portfolio .portfolio-filters {
+.portfolio .portfolio-filters {
   padding: 0;
   margin: 0 auto 20px auto;
   list-style: none;
@@ -769,7 +769,7 @@ section,
 
 .portfolio .portfolio-filters li:last-child {
   margin-right: 0;
-} */
+}
 
 .portfolio .p-portfolio {
   padding: 10px;
