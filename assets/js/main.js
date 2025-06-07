@@ -13,25 +13,29 @@
    * Header toggle
    */
   const headerToggleBtn = document.querySelector('.header-toggle');
+  const header = document.querySelector('#header');
 
   function headerToggle() {
-    document.querySelector('#header').classList.toggle('header-show');
+    if (!header) return; // لا تكمل لو ما فيش header
+    header.classList.toggle('header-show');
     headerToggleBtn.classList.toggle('bi-list');
     headerToggleBtn.classList.toggle('bi-x');
   }
-  headerToggleBtn.addEventListener('click', headerToggle);
+
+  if (headerToggleBtn) {
+    headerToggleBtn.addEventListener('click', headerToggle);
+  }
 
   /**
    * Hide mobile nav on same-page/hash links
    */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
-      if (document.querySelector('.header-show')) {
+      if (header && header.classList.contains('header-show')) {
         headerToggle();
-      }
-    });
-
-  });
+      }
+    });
+  });
 
   /**
    * Toggle mobile nav dropdowns
